@@ -1,4 +1,3 @@
-// src/models/Participant.ts
 import { IBaseParticipant } from './interfaces/IBaseParticipant';
 import { ParticipantRole } from './EventTypes';
 
