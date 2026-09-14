@@ -8,6 +8,9 @@ export interface IBaseEvent {
     time: Date;
     eventTheme: EventTheme;
     eventType: EventType;
+
+    addParticipant(participant: IBaseParticipant): void;
+    removeParticipant(participantId: string): void;
 }
 
 export interface IEvent extends IBaseEvent {
