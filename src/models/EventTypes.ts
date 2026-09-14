@@ -2,6 +2,7 @@ export enum ParticipantRole {
     Guest = 'guest',
     Performer = 'performer',
     Organizer = 'organizer',
+    Celebrated = 'celebrated',
 }
 
 export enum EventType {
