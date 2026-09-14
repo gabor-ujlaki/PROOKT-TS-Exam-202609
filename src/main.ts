@@ -27,3 +27,29 @@ console.log('\n*** Rendezvények listája ***');
 for (const event of manager.listEvents()) {
     event.print();
 }
+
+const birthday = new Event(
+    'EVT-002',
+    'Anna születésnapja',
+    'Házibuli',
+    new Date('2026-09-20T19:00:00'),
+    EventTheme.Private,
+    EventType.Birthday
+);
+
+manager.createEvent(birthday);
+
+const p2 = new Participant('PPT-002', 'Gipsz Jakab', 'jakab.gipsz.tom@example.com', ParticipantRole.Organizer);
+const p3 = new Participant('PPT-003', 'Nagy Anna', 'anna.nagy@example.com', ParticipantRole.Celebrated);
+
+manager.addParticipantToEvent('EVT-002', p2);
+manager.addParticipantToEvent('EVT-002', p3);
+
+console.log('\n*** Rendezvények listája ***');
+for (const event of manager.listEvents()) {
+    event.print();
+}
+
+console.log('\n*** Zenei rendezvények ***');
+const musicEvents = manager.findByTheme(EventTheme.Music);
+musicEvents.forEach(event => event.print());
